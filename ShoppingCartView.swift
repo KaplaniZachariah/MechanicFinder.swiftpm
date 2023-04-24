@@ -9,9 +9,14 @@ import SwiftUI
 
 
 struct ShoppingCartView: View {
+    
+    
     var body: some View {
         VStack {
-            
+            Text("Your Items:")
+                .font(.title)
+                .foregroundColor(Color.black)
+                .multilineTextAlignment(.center)
         }
     }
 }
