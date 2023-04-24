@@ -12,11 +12,13 @@ struct ShoppingCartView: View {
     
     
     var body: some View {
-        VStack {
-            Text("Your Items:")
-                .font(.title)
-                .foregroundColor(Color.black)
-                .multilineTextAlignment(.center)
+        NavigationView{
+            VStack {
+                Text("Your Items:")
+                    .font(.title)
+                    .foregroundColor(Color.black)
+                    .multilineTextAlignment(.center)
+            }
         }
     }
 }
