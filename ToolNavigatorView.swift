@@ -8,12 +8,27 @@
 import SwiftUI
 
 struct ToolNavigatorView: View {
+   @State var image = ""
+    
     var body: some View{
         VStack{
+            
             NavigationView(){
-                Button("Add to Cart") {
-                    
+              
+                Button {
+                    ShoppingCartView()
+                } label: {
+                    Image("WrenchImage")
+                        .padding()
+                        .clipShape(Circle())
+                        .foregroundColor(.blue)
                 }
+
+                    
+                    
+                    
+                
+                
             }
         }
     }
