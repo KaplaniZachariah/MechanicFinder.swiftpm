@@ -7,3 +7,14 @@
 
 import SwiftUI
 
+struct ToolNavigatorView: View {
+    var body: some View{
+        VStack{
+            NavigationView(){
+                Button("Add to Cart") {
+                    
+                }
+            }
+        }
+    }
+}
