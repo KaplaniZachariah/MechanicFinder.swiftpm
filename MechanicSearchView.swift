@@ -7,3 +7,13 @@
 
 import SwiftUI
 
+struct MechanicSearchView: View {
+    var body: some View {
+        NavigationView {
+            
+            Text("filler")
+            
+            
+        }
+    }
+}
