@@ -9,13 +9,15 @@ import SwiftUI
 
 struct ToolNavigatorView: View {
    @State var image = ""
-    
+   @State var ToolSearch = ""
     var body: some View{
         VStack{
             
-            NavigationView(){
-              
-                Button {
+                TextField("Enter Tool Here", text: $ToolSearch)
+                    .foregroundColor(.blue)
+                    
+                
+                NavigationLink {
                     ShoppingCartView()
                 } label: {
                     Image("WrenchImage")
@@ -23,6 +25,22 @@ struct ToolNavigatorView: View {
                         .clipShape(Circle())
                         .foregroundColor(.blue)
                 }
+            NavigationLink {
+                ShoppingCartView()
+            } label: {
+                Image("TorqueWrenchImage")
+                    .padding()
+                    .clipShape(Circle())
+                    .foregroundColor(.blue)
+            }
+            NavigationLink {
+                ShoppingCartView()
+            } label: {
+                Image("DrillImage")
+                    .padding()
+                    .clipShape(Circle())
+                    .foregroundColor(.blue)
+            }
 
                     
                     
@@ -32,4 +50,4 @@ struct ToolNavigatorView: View {
             }
         }
     }
-}
+
