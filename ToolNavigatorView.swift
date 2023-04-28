@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ToolNavigatorView: View {
-   @State var image = ""
-   @State var ToolSearch = ""
+    @State var image = ""
+    @State var ToolSearch = ""
     var body: some View{
         VStack{
             
-                TextField("Enter Tool Here", text: $ToolSearch)
-                    .foregroundColor(.blue)
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
-                    
+            TextField("Enter Tool Here", text: $ToolSearch)
+                .foregroundColor(.blue)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
             List{
                 NavigationLink {
                     ShoppingCartView()
@@ -27,6 +27,7 @@ struct ToolNavigatorView: View {
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
                         .foregroundColor(.blue)
+                     
                 }
                 NavigationLink {
                     ShoppingCartView()
@@ -36,6 +37,7 @@ struct ToolNavigatorView: View {
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
                         .foregroundColor(.blue)
+                        
                 }
                 NavigationLink {
                     ShoppingCartView()
@@ -45,14 +47,9 @@ struct ToolNavigatorView: View {
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
                         .foregroundColor(.blue)
+                        
                 }
-            }
-                    
-                    
-                    
-                
-                
             }
         }
     }
-
+}
