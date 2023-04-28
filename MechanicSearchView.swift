@@ -6,8 +6,16 @@
 //
 
 import SwiftUI
+import MapKit
+import CoreLocation
+import CoreLocationUI
 
 struct MechanicSearchView: View {
+    
+    @State var region = MKCoordinateRegion()
+    @State var mechanicShops: [Location] = []
+    @StateObject var locationManager = LocationManager()
+    
     var body: some View {
         
         Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: mechanicShops) { userLocation in
