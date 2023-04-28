@@ -15,33 +15,38 @@ struct ToolNavigatorView: View {
             
                 TextField("Enter Tool Here", text: $ToolSearch)
                     .foregroundColor(.blue)
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
                     
-                
+            List{
                 NavigationLink {
                     ShoppingCartView()
                 } label: {
                     Image("WrenchImage")
-                        .padding()
+                        .padding(.vertical)
+                        .frame(width: 50, height: 50)
                         .clipShape(Circle())
                         .foregroundColor(.blue)
                 }
-            NavigationLink {
-                ShoppingCartView()
-            } label: {
-                Image("TorqueWrenchImage")
-                    .padding()
-                    .clipShape(Circle())
-                    .foregroundColor(.blue)
+                NavigationLink {
+                    ShoppingCartView()
+                } label: {
+                    Image("TorqueWrenchImage")
+                        .padding(.vertical)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .foregroundColor(.blue)
+                }
+                NavigationLink {
+                    ShoppingCartView()
+                } label: {
+                    Image("DrillImage")
+                        .padding(.vertical)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .foregroundColor(.blue)
+                }
             }
-            NavigationLink {
-                ShoppingCartView()
-            } label: {
-                Image("DrillImage")
-                    .padding()
-                    .clipShape(Circle())
-                    .foregroundColor(.blue)
-            }
-
                     
                     
                     

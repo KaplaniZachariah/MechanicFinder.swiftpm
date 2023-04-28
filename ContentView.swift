@@ -35,7 +35,7 @@ struct ContentView: View {
 
                 
                 NavigationLink { 
-                    ShoppingCartView()
+                    ToolNavigatorView()
                 } label: { 
                     Text("Shop for Tools")
                         .font(.title2)
