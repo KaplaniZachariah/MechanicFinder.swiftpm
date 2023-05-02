@@ -25,6 +25,7 @@ struct ToolNavigatorView: View {
                     shoppingCartItems.append(tool)
                 } label: {
                     Image("WrenchImage")
+                        .resizable()
                         .padding(.vertical)
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
@@ -36,6 +37,7 @@ struct ToolNavigatorView: View {
                     shoppingCartItems.append(tool)
                 } label: {
                     Image("TorqueWrenchImage")
+                        .resizable()
                         .padding(.vertical)
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
@@ -47,6 +49,48 @@ struct ToolNavigatorView: View {
                     shoppingCartItems.append(tool)
                 } label: {
                     Image("DrillImage")
+                        .resizable()
+                        .padding(.vertical)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .foregroundColor(.blue)
+                    
+                }
+                NavigationLink {
+                    ShoppingCartView()
+                } label: {
+                    Image("ScrewDriver")
+                        .resizable()
+                        .padding(.vertical)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .foregroundColor(.blue)
+                }
+                NavigationLink {
+                    ShoppingCartView()
+                } label: {
+                    Image("TireIron")
+                        .resizable()
+                        .padding(.vertical)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .foregroundColor(.blue)
+                }
+                NavigationLink {
+                    ShoppingCartView()
+                } label: {
+                    Image("CarJack")
+                        .resizable()
+                        .padding(.vertical)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .foregroundColor(.blue)
+                }
+                NavigationLink {
+                    ShoppingCartView()
+                } label: {
+                    Image("SocketWrencg")
+                        .resizable()
                         .padding(.vertical)
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
