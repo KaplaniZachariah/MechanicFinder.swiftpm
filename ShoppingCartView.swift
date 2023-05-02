@@ -21,6 +21,11 @@ struct ShoppingCartView: View {
                     .multilineTextAlignment(.center)
                 List(shoppingCartItems, id: \.self) { cartItem in
                     Image("\(cartItem)")
+                        .resizable()
+                        .padding(.vertical)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .foregroundColor(.blue)
                 }
             }
         }
