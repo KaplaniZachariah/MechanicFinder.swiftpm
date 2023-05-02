@@ -72,6 +72,16 @@ struct ToolNavigatorView: View {
                         .clipShape(Circle())
                         .foregroundColor(.blue)
                 }
+                NavigationLink {
+                    ShoppingCartView()
+                } label: {
+                    Image("CarJack")
+                        .resizable()
+                        .padding(.vertical)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .foregroundColor(.blue)
+                }
             }
         }
     }
