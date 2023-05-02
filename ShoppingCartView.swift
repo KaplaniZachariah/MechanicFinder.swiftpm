@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ShoppingCartView: View {
     
+    @Binding var shoppingCartItems:[String]
+    
     var body: some View {
         NavigationView{
             VStack {
@@ -17,6 +19,9 @@ struct ShoppingCartView: View {
                     .font(.title)
                     .foregroundColor(Color.black)
                     .multilineTextAlignment(.center)
+                List(shoppingCartItems, id: \.self) { cartItem in
+                    Image("\(cartItem)")
+                }
             }
         }
     }

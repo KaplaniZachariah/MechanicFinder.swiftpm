@@ -44,7 +44,7 @@ struct MechanicSearchView: View {
                         .resizable()
                         .scaledToFit()
                         .padding(10)
-                        .foregroundColor(.white)
+                        .foregroundColor(.accentColor)
                     Text("Find\nMechanics")
                         .font(.headline)
                         .foregroundColor(.black)
