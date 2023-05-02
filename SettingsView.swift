@@ -13,6 +13,9 @@ struct SettingsView: View {
     
     
     var body: some View {
-        Text("filler")
+        Text("Type Of Mechanic")
+        Text("Preffered Location")
+        
+             
     }
 }
