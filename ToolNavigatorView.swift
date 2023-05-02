@@ -27,7 +27,7 @@ struct ToolNavigatorView: View {
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
                         .foregroundColor(.blue)
-                     
+                    
                 }
                 NavigationLink {
                     ShoppingCartView()
@@ -37,7 +37,7 @@ struct ToolNavigatorView: View {
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
                         .foregroundColor(.blue)
-                        
+                    
                 }
                 NavigationLink {
                     ShoppingCartView()
@@ -47,7 +47,25 @@ struct ToolNavigatorView: View {
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
                         .foregroundColor(.blue)
-                        
+                    
+                }
+                NavigationLink {
+                    ShoppingCartView()
+                } label: {
+                    Image("ScrewDriver")
+                        .padding(.vertical)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .foregroundColor(.blue)
+                }
+                NavigationLink {
+                    ShoppingCartView()
+                } label: {
+                    Image("TireIron")
+                        .padding(.vertical)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .foregroundColor(.blue)
                 }
             }
         }
