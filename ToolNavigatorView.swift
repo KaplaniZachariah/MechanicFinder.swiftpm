@@ -23,6 +23,7 @@ struct ToolNavigatorView: View {
                     ShoppingCartView()
                 } label: {
                     Image("WrenchImage")
+                        .resizable()
                         .padding(.vertical)
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
@@ -33,6 +34,7 @@ struct ToolNavigatorView: View {
                     ShoppingCartView()
                 } label: {
                     Image("TorqueWrenchImage")
+                        .resizable()
                         .padding(.vertical)
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
@@ -43,6 +45,7 @@ struct ToolNavigatorView: View {
                     ShoppingCartView()
                 } label: {
                     Image("DrillImage")
+                        .resizable()
                         .padding(.vertical)
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
@@ -53,6 +56,7 @@ struct ToolNavigatorView: View {
                     ShoppingCartView()
                 } label: {
                     Image("ScrewDriver")
+                        .resizable()
                         .padding(.vertical)
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
@@ -62,6 +66,7 @@ struct ToolNavigatorView: View {
                     ShoppingCartView()
                 } label: {
                     Image("TireIron")
+                        .resizable()
                         .padding(.vertical)
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
