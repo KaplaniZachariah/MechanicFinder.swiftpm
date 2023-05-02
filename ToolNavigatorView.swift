@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ToolNavigatorView: View {
-    @State var image = ""
+    @State var tool = ""
     @State var ToolSearch = ""
+    @State var shoppingCartItems:[String] = []
     var body: some View{
         VStack{
             
@@ -19,8 +20,9 @@ struct ToolNavigatorView: View {
                 .padding()
       
             List{
-                NavigationLink {
-                    ShoppingCartView()
+                Button {
+                    tool = "WrenchImage"
+                    shoppingCartItems.append(tool)
                 } label: {
                     Image("WrenchImage")
                         .resizable()
@@ -30,8 +32,9 @@ struct ToolNavigatorView: View {
                         .foregroundColor(.blue)
                     
                 }
-                NavigationLink {
-                    ShoppingCartView()
+                Button {
+                    tool = "TorqueWrenchImage"
+                    shoppingCartItems.append(tool)
                 } label: {
                     Image("TorqueWrenchImage")
                         .resizable()
@@ -41,8 +44,9 @@ struct ToolNavigatorView: View {
                         .foregroundColor(.blue)
                     
                 }
-                NavigationLink {
-                    ShoppingCartView()
+                Button {
+                    tool = "DrillImage"
+                    shoppingCartItems.append(tool)
                 } label: {
                     Image("DrillImage")
                         .resizable()
@@ -91,8 +95,18 @@ struct ToolNavigatorView: View {
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
                         .foregroundColor(.blue)
+                    
                 }
             }
         }
+        
+        NavigationLink {
+            ShoppingCartView(shoppingCartItems: $shoppingCartItems)
+        } label: {
+            Image(systemName: "cart.fill")
+                .scaleEffect(3)
+        }
+        
+        
     }
 }
