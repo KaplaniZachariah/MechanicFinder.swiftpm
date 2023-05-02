@@ -17,7 +17,7 @@ struct ToolNavigatorView: View {
                 .foregroundColor(.blue)
                 .textFieldStyle(.roundedBorder)
                 .padding()
-            
+      
             List{
                 NavigationLink {
                     ShoppingCartView()
