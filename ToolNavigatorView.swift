@@ -18,7 +18,7 @@ struct ToolNavigatorView: View {
                 .foregroundColor(.blue)
                 .textFieldStyle(.roundedBorder)
                 .padding()
-      
+            
             List{
                 Button {
                     tool = "WrenchImage"
@@ -56,8 +56,9 @@ struct ToolNavigatorView: View {
                         .foregroundColor(.blue)
                     
                 }
-                NavigationLink {
-                    ShoppingCartView()
+                Button {
+                    tool = "ScrewDriver"
+                    shoppingCartItems.append(tool)
                 } label: {
                     Image("ScrewDriver")
                         .resizable()
@@ -65,9 +66,11 @@ struct ToolNavigatorView: View {
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
                         .foregroundColor(.blue)
+                    
                 }
-                NavigationLink {
-                    ShoppingCartView()
+                Button {
+                    tool = "TireIron"
+                    shoppingCartItems.append(tool)
                 } label: {
                     Image("TireIron")
                         .resizable()
@@ -76,8 +79,9 @@ struct ToolNavigatorView: View {
                         .clipShape(Circle())
                         .foregroundColor(.blue)
                 }
-                NavigationLink {
-                    ShoppingCartView()
+                Button {
+                    tool = "CarJack"
+                    shoppingCartItems.append(tool)
                 } label: {
                     Image("CarJack")
                         .resizable()
@@ -86,17 +90,20 @@ struct ToolNavigatorView: View {
                         .clipShape(Circle())
                         .foregroundColor(.blue)
                 }
-                NavigationLink {
-                    ShoppingCartView()
+                Button {
+                    tool = "SocketWrench"
+                    shoppingCartItems.append(tool)
                 } label: {
-                    Image("SocketWrencg")
+                    Image("SocketWrench")
                         .resizable()
                         .padding(.vertical)
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
                         .foregroundColor(.blue)
-                    
                 }
+                
+                
+                
             }
         }
         
@@ -106,7 +113,7 @@ struct ToolNavigatorView: View {
             Image(systemName: "cart.fill")
                 .scaleEffect(3)
         }
-        
+    }
         
     }
-}
+
