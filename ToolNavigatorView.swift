@@ -101,6 +101,18 @@ struct ToolNavigatorView: View {
                         .clipShape(Circle())
                         .foregroundColor(.blue)
                 }
+                Button {
+                    tool = "RubberMallet"
+                    shoppingCartItems.append(tool)
+                } label: {
+                    Image("RubberMallet")
+                        .resizable()
+                        .padding(.vertical)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .foregroundColor(.blue)
+                }
+                
                 
                 
                 
