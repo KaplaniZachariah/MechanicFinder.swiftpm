@@ -15,7 +15,8 @@ struct SettingsView: View {
     var body: some View {
         Text("Type Of Mechanic")
         Text("Preffered Location")
-        
+        Text("Price range for mechanics")
+        Text("Reviews of the mechanics")
              
     }
 }
