@@ -26,12 +26,16 @@ struct ToolNavigatorView: View {
                     shoppingCartItems.append(tool)
                     PopUp = true
                 } label: {
-                    Image("WrenchImage")
-                        .resizable()
-                        .padding(.vertical)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                        .foregroundColor(.blue)
+                    HStack{
+                        Image("WrenchImage")
+                            .resizable()
+                            .padding(.vertical)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .foregroundColor(.blue)
+
+                        Text("Wrench")
+                    }
                         .alert(isPresented: $PopUp) {
                             Alert(
                                 title: Text("Add This Item To Cart"),
@@ -47,12 +51,15 @@ struct ToolNavigatorView: View {
                     shoppingCartItems.append(tool)
                     PopUp = true
                 } label: {
-                    Image("TorqueWrenchImage")
-                        .resizable()
-                        .padding(.vertical)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                        .foregroundColor(.blue)
+                    HStack{
+                        Image("TorqueWrenchImage")
+                            .resizable()
+                            .padding(.vertical)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .foregroundColor(.blue)
+                        Text("Torque Wrench")
+                    }
                         .alert(isPresented: $PopUp) {
                             Alert(
                                 title: Text("Add This Item To Cart"),
@@ -68,12 +75,15 @@ struct ToolNavigatorView: View {
                     shoppingCartItems.append(tool)
                     PopUp = true
                 } label: {
-                    Image("DrillImage")
-                        .resizable()
-                        .padding(.vertical)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                        .foregroundColor(.blue)
+                    HStack{
+                        Image("DrillImage")
+                            .resizable()
+                            .padding(.vertical)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .foregroundColor(.blue)
+                        Text("Electric Drill")
+                    }
                         .alert(isPresented: $PopUp) {
                             Alert(
                                 title: Text("Add This Item To Cart"),
@@ -89,12 +99,15 @@ struct ToolNavigatorView: View {
                     shoppingCartItems.append(tool)
                     PopUp = true
                 } label: {
-                    Image("ScrewDriver")
-                        .resizable()
-                        .padding(.vertical)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                        .foregroundColor(.blue)
+                    HStack{
+                        Image("ScrewDriver")
+                            .resizable()
+                            .padding(.vertical)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .foregroundColor(.blue)
+                        Text("Screw Driver")
+                    }
                         .alert(isPresented: $PopUp) {
                             Alert(
                                 title: Text("Add This Item To Cart"),
@@ -110,12 +123,15 @@ struct ToolNavigatorView: View {
                     shoppingCartItems.append(tool)
                     PopUp = true
                 } label: {
-                    Image("TireIron")
-                        .resizable()
-                        .padding(.vertical)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                        .foregroundColor(.blue)
+                    HStack{
+                        Image("TireIron")
+                            .resizable()
+                            .padding(.vertical)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .foregroundColor(.blue)
+                        Text("Tire Iron")
+                    }
                         .alert(isPresented: $PopUp) {
                             Alert(
                                 title: Text("Add This Item To Cart"),
@@ -130,12 +146,15 @@ struct ToolNavigatorView: View {
                     shoppingCartItems.append(tool)
                     PopUp = true
                 } label: {
-                    Image("CarJack")
-                        .resizable()
-                        .padding(.vertical)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                        .foregroundColor(.blue)
+                    HStack{
+                        Image("CarJack")
+                            .resizable()
+                            .padding(.vertical)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .foregroundColor(.blue)
+                        Text("Car Jack")
+                    }
                         .alert(isPresented: $PopUp) {
                             Alert(
                                 title: Text("Add This Item To Cart"),
@@ -150,12 +169,15 @@ struct ToolNavigatorView: View {
                     shoppingCartItems.append(tool)
                     PopUp = true
                 } label: {
-                    Image("SocketWrench")
-                        .resizable()
-                        .padding(.vertical)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                        .foregroundColor(.blue)
+                    HStack{
+                        Image("SocketWrench")
+                            .resizable()
+                            .padding(.vertical)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .foregroundColor(.blue)
+                        Text("Socket Wrench")
+                    }
                         .alert(isPresented: $PopUp) {
                             Alert(
                                 title: Text("Add This Item To Cart"),
@@ -170,12 +192,15 @@ struct ToolNavigatorView: View {
                     shoppingCartItems.append(tool)
                     PopUp = true
                 } label: {
-                    Image("RubberMallet")
-                        .resizable()
-                        .padding(.vertical)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                        .foregroundColor(.blue)
+                    HStack{
+                        Image("RubberMallet")
+                            .resizable()
+                            .padding(.vertical)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .foregroundColor(.blue)
+                        Text("Rubber Mallet")
+                    }                       
                         .alert(isPresented: $PopUp) {
                             Alert(
                                 title: Text("Add This Item To Cart"),
