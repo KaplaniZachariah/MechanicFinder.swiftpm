@@ -64,6 +64,19 @@ struct ContentView: View {
                         .foregroundColor(.black)
                         .padding(20)
                 }
+                
+                
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Text("Settings")
+                        .font(.title2)
+                        .frame(width: 300, height: 75)
+                        .background(.blue)
+                        .clipShape(Capsule())
+                        .foregroundColor(.black)
+                        .padding(20)
+                }
             }
         }
         .navigationViewStyle(.stack)
