@@ -19,6 +19,9 @@ struct ShoppingCartView: View {
                 Text("Your Items:")
                     .font(.title)
                     .foregroundColor(Color.blue)
+                Text("Swipe To Delete")
+                    .font(.caption)
+                    .foregroundColor(Color.blue)
                 List{
                     
                     ForEach(shoppingCartItems, id: \.self) {
