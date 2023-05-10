@@ -11,6 +11,7 @@ import SwiftUI
 struct ShoppingCartView: View {
     
     @Binding var shoppingCartItems:[String]
+   
     
     var body: some View {
         NavigationView{
@@ -18,16 +19,26 @@ struct ShoppingCartView: View {
                 Text("Your Items:")
                     .font(.title)
                     .foregroundColor(Color.blue)
-                    .multilineTextAlignment(.center)
-                List(shoppingCartItems, id: \.self) { cartItem in
-                    Image("\(cartItem)")
-                        .resizable()
-                        .padding(.vertical)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                        .foregroundColor(.purple)
+                List{
+                    
+                    ForEach(shoppingCartItems, id: \.self) {
+                        cartItem in
+                        Image("\(cartItem)")
+                            .resizable()
+                            .padding(.vertical)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .foregroundColor(.purple)
+                    }
+                    .onDelete { ( indexSet )  in
+                        if let index = indexSet.first {
+                            self.shoppingCartItems.remove(at: index)
+                        }
+                        
+                    }
                 }
             }
         }
     }
 }
+
