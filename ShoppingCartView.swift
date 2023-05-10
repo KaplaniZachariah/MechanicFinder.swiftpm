@@ -17,7 +17,7 @@ struct ShoppingCartView: View {
             VStack {
                 Text("Your Items:")
                     .font(.title)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color.blue)
                     .multilineTextAlignment(.center)
                 List(shoppingCartItems, id: \.self) { cartItem in
                     Image("\(cartItem)")
@@ -25,7 +25,7 @@ struct ShoppingCartView: View {
                         .padding(.vertical)
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
-                        .foregroundColor(.blue)
+                        .foregroundColor(.purple)
                 }
             }
         }
