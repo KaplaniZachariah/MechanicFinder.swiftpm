@@ -1,14 +1,13 @@
 //
-//  ShoppingCartView.swift
+//  CheckOutView.swift
 //  MechanicFinder
 //
-//  Created by Zach kaplani  on 4/24/23.
+//  Created by Zach kaplani  on 5/10/23.
 //
 
 import SwiftUI
 
-
-struct ShoppingCartView: View {
+struct CheckOutView: View {
     
     @Binding var shoppingCartItems:[String]
     
@@ -16,7 +15,7 @@ struct ShoppingCartView: View {
     var body: some View {
         NavigationView{
             VStack {
-                Text("Your Items:")
+                Text("Your Orders:")
                     .font(.title)
                     .foregroundColor(Color.blue)
                 Text("Swipe To Delete")
@@ -40,22 +39,7 @@ struct ShoppingCartView: View {
                         
                     }
                 }
-                NavigationLink {
-                    CheckOutView(shoppingCartItems: $shoppingCartItems)
-                } label: {
-                    Text("Proceed To Checkout")
-                        .font(.caption)
-                        .frame(width: 100, height: 25)
-                        .background(.blue)
-                        .clipShape(Capsule())
-                        .foregroundColor(.black)
-                        .padding(20)
-                        
-
-                }
+                
             }
-            
         }
     }
-}
-
