@@ -43,3 +43,4 @@ struct CheckOutView: View {
             }
         }
     }
+}
