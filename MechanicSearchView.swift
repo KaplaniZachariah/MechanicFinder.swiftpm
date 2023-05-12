@@ -15,49 +15,79 @@ struct MechanicSearchView: View {
     @State var region = MKCoordinateRegion()
     @State var mechanicShops: [Location] = []
     @StateObject var locationManager = LocationManager()
+    @State var latitudeDeltaNumber:Double = 0.05
+    @State var longitudeDeltaNumber:Double = 0.05
+    @State var alertPresent:Bool = false
     
     var body: some View {
-        
-        Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: mechanicShops) { userLocation in
-            MapMarker(coordinate: userLocation.coordinate)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        
-        HStack{
-            Button(action: {
-                locationManager.requestLocation()
-                zoomIn()
-            }, label: {
-                Text("Share Location")
-                    .frame(width: 200, height: 75)
+        NavigationView {
+            Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: mechanicShops) { userLocation in
+                MapMarker(coordinate: userLocation.coordinate)
+            }
+            //            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            .toolbar {
+                
+                ToolbarItem(id: "findMyLocation", placement: .primaryAction) {
+                    LocationButton(.shareCurrentLocation) {
+                        locationManager.requestLocation()
+                        zoomIn()
+                    }
+                    .frame(width: 250, height: 75)
                     .background(.blue)
-                    .foregroundColor(.black)
-                    .font(.title2)
                     .clipShape(Capsule())
-                    .padding(10)
-            })
-            Button {
-                findMechanicShop()
-            } label: {
-                ZStack {
-                    Image(systemName: "car.side.front.open.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .padding(10)
-                        .foregroundColor(.accentColor)
-                    Text("Find\nMechanics")
-                        .font(.headline)
-                        .foregroundColor(.black)
-                        .multilineTextAlignment(.center)
-                        .offset(x: 15, y: -15)
-                    
+                    .foregroundColor(.black)
+                }
+                
+                
+                ToolbarItem(id: "increaseSearchRadius", placement: .bottomBar) {
+                    Button {
+                        latitudeDeltaNumber += 0.025
+                        longitudeDeltaNumber += 0.025
+                        setRegion()
+                    } label: {
+                        Text("Increase Search Radius")
+                    }
+                }
+            
+                ToolbarItem(id: "decreaseSearchRadius", placement: .bottomBar) {
+                    Button {
+                        latitudeDeltaNumber -= 0.025
+                        longitudeDeltaNumber -= 0.025
+//                        if latitudeDeltaNumber == 0 {
+//                            alertPresent = true
+                        if latitudeDeltaNumber == 0 {
+                            latitudeDeltaNumber = 0.025
+                            longitudeDeltaNumber = 0.025
+                        }
+//                        }
+                    } label: {
+                        Text("Increase Search Radius")
+                    }
+                }
+//                .alert(isPresented: $alertPresent) {
+//                    Alert(
+//                        title: Text("Search Radius Cannot be 0"),
+//                        primaryButton: .cancel(Text("Okay")))
+//                }
+                
+                ToolbarItem(id: "findMechanics", placement: .bottomBar) {
+                    Button {
+                        findMechanicShop()
+                    } label: {
+                        Text("Find Mechanics")
+                            .frame(width: 300, height: 75)
+                            .background(.blue)
+                            .clipShape(Capsule())
+                            .foregroundColor(.black)
+                    }
                 }
             }
         }
     }
     
     func setRegion() {
-        region = MKCoordinateRegion(center: locationManager.myLocation!, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        region = MKCoordinateRegion(center: locationManager.myLocation!, span: MKCoordinateSpan(latitudeDelta: latitudeDeltaNumber, longitudeDelta: longitudeDeltaNumber))
     }
     
     func findMechanicShop() {
