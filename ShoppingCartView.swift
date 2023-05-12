@@ -44,12 +44,14 @@ struct ShoppingCartView: View {
                     CheckOutView(shoppingCartItems: $shoppingCartItems)
                 } label: {
                     Text("Proceed To Checkout")
+                        .scaledToFit()
                         .font(.caption)
-                        .frame(width: 100, height: 25)
+                        .frame(width: 200, height: 25)
                         .background(.blue)
                         .clipShape(Capsule())
                         .foregroundColor(.black)
                         .padding(20)
+                        
                         
 
                 }
