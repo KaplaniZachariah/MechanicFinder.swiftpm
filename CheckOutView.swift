@@ -11,7 +11,6 @@ struct CheckOutView: View {
     
     @Binding var shoppingCartItems:[String]
     
-    
     var body: some View {
         NavigationView{
             VStack {
@@ -43,3 +42,4 @@ struct CheckOutView: View {
             }
         }
     }
+}
