@@ -113,7 +113,6 @@ struct ToolNavigatorView: View {
                                 title: Text("Add This Item To Cart"),
                                 primaryButton: .cancel(Text("Yes")),
                         secondaryButton: .destructive(Text("No")))
-                            
                         }
                        
                     

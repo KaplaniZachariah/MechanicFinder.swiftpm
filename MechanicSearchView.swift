@@ -28,55 +28,71 @@ struct MechanicSearchView: View {
             
             .toolbar {
                 
-                ToolbarItem(id: "findMyLocation", placement: .primaryAction) {
+                ToolbarItem(id: "findMyLocation", placement: .navigationBarLeading) {
                     LocationButton(.shareCurrentLocation) {
                         locationManager.requestLocation()
-                        zoomIn()
                     }
-                    .frame(width: 250, height: 75)
+                    .frame(width: 250, height: 50)
                     .background(.blue)
                     .clipShape(Capsule())
                     .foregroundColor(.black)
                 }
                 
+                ToolbarItem(id: "zoomIn", placement: .navigationBarTrailing) {
+                    Button {
+                        zoomIn()
+                    } label: {
+                        Image(systemName: "location.fill")
+                            .frame(width: 75, height: 50)
+                            .background(.blue)
+                            .clipShape(Capsule())
+                            .foregroundColor(.black)
+                    }
+                    
+                }
+                
                 
                 ToolbarItem(id: "increaseSearchRadius", placement: .bottomBar) {
                     Button {
-                        latitudeDeltaNumber += 0.025
-                        longitudeDeltaNumber += 0.025
+                        latitudeDeltaNumber += 0.005
+                        longitudeDeltaNumber += 0.005
                         setRegion()
                     } label: {
-                        Text("Increase Search Radius")
+                        Text("+ Radius")
+                            .font(.caption)
+                            .frame(width: 75, height: 50)
+                            .background(.blue)
+                            .clipShape(Capsule())
+                            .foregroundColor(.black)
                     }
                 }
-            
+                
                 ToolbarItem(id: "decreaseSearchRadius", placement: .bottomBar) {
                     Button {
-                        latitudeDeltaNumber -= 0.025
-                        longitudeDeltaNumber -= 0.025
-//                        if latitudeDeltaNumber == 0 {
-//                            alertPresent = true
-                        if latitudeDeltaNumber == 0 {
-                            latitudeDeltaNumber = 0.025
-                            longitudeDeltaNumber = 0.025
+                        latitudeDeltaNumber -= 0.005
+                        longitudeDeltaNumber -= 0.005
+                        if latitudeDeltaNumber < 0.005 {
+                            latitudeDeltaNumber = 0.005
+                            longitudeDeltaNumber = 0.005
                         }
-//                        }
+                        setRegion()
                     } label: {
-                        Text("Increase Search Radius")
+                        Text("- Radius")
+                            .font(.caption)
+                            .frame(width: 75, height: 50)
+                            .background(.blue)
+                            .clipShape(Capsule())
+                            .foregroundColor(.black)
                     }
                 }
-//                .alert(isPresented: $alertPresent) {
-//                    Alert(
-//                        title: Text("Search Radius Cannot be 0"),
-//                        primaryButton: .cancel(Text("Okay")))
-//                }
+             
                 
                 ToolbarItem(id: "findMechanics", placement: .bottomBar) {
                     Button {
                         findMechanicShop()
                     } label: {
                         Text("Find Mechanics")
-                            .frame(width: 300, height: 75)
+                            .frame(width: 175, height: 50)
                             .background(.blue)
                             .clipShape(Capsule())
                             .foregroundColor(.black)
@@ -84,6 +100,7 @@ struct MechanicSearchView: View {
                 }
             }
         }
+        .navigationViewStyle(.stack)
     }
     
     func setRegion() {
@@ -107,7 +124,7 @@ struct MechanicSearchView: View {
     func zoomIn() {
         withAnimation(.default) {
             guard let userLocation = locationManager.myLocation else { return }
-            region = MKCoordinateRegion(center: userLocation, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+            region = MKCoordinateRegion(center: userLocation, span: MKCoordinateSpan(latitudeDelta: latitudeDeltaNumber, longitudeDelta: longitudeDeltaNumber))
         }
         
     }
