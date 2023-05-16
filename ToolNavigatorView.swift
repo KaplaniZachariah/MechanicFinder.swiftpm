@@ -219,7 +219,7 @@ struct ToolNavigatorView: View {
             ShoppingCartView(shoppingCartItems: $shoppingCartItems)
         } label: {
             Image(systemName: "cart.fill")
-                .scaleEffect(3)
+                .frame(width: 50, height: 50)
         }
     }
         
