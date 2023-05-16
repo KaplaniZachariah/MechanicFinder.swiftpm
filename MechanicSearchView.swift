@@ -12,7 +12,7 @@ import CoreLocationUI
 
 struct MechanicSearchView: View {
     
-    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.0902, longitude: -95.7129), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
+    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.0902, longitude: -95.7129), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
     @State var mechanicShops: [Location] = []
     @StateObject var locationManager = LocationManager()
     @State var latitudeDeltaNumber:Double = 0.05
