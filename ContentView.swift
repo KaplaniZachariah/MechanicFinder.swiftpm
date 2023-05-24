@@ -77,7 +77,7 @@ struct ContentView: View {
                         .foregroundColor(.black)
                         .padding(20)
                 }
-                .disabled(true)
+               
             }
         }
         .navigationViewStyle(.stack)
