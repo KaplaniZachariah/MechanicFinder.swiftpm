@@ -46,7 +46,7 @@ struct ShoppingCartView: View {
                     Text("Proceed To Checkout")
                         .scaledToFit()
                         .font(.caption)
-                        .frame(width: 201, height: 25)
+                        .frame(width: 200, height: 25)
                         .background(.blue)
                         .clipShape(Capsule())
                         .foregroundColor(.black)
