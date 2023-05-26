@@ -15,45 +15,54 @@ struct SettingsView: View {
     @State private var ContacttoggleSwitch = false
     @State var ZIPcodeToggle = false
     @State var ZIPcode = ""
+    @State private var selection = "States"
+    let States = ["Arizona", "Washington", "Oregon", "California", "New Mexico", "Texas", "Luisiana", "Mississippi", "Alabama", "Georgia", "Florida", "South Carolina", "North Carolina", "Vriginia", "Washington DC", "Pennsylvania", "New York", "New Jersey", "Delaware", "Maryland", "West Virginia", "Rhode Island", "Connecticut", "Massachusetts", "Vermont", "New Hampshire", "Maine", "Ohio", "Indiana", "Michigan", "illinois", "Wisconsin", "Minnesota", "Iowa", "Missouri", "Arkansas", "Tennessee", "Kentucky", "Oklahoma", "Kansas", "Nebraska", "South Dekota", "North Dekota", "Montana", "Wyoming", "Colorado", "Utah", "Idaho", "Nevada" ]
     
     var body: some View {
         Text("Settings")
             .font(.title)
             .foregroundColor(.blue)
         List{
-            Toggle("Show Location", isOn: $LocationtoggleSwitch)
-            
-            if LocationtoggleSwitch {
-                Text("Location is On")
-                    .padding(.horizontal)
+            Group {
+                Toggle("Show Location", isOn: $LocationtoggleSwitch)
+                
+                if LocationtoggleSwitch {
+                    Text("Location is On")
+                        .padding(.horizontal)
+                }
+                
+                Toggle("Allow Mechanics Near You to Know Your Location", isOn: $MechanictoggleSwitch)
+                
+                if MechanictoggleSwitch {
+                    Text("location Allowed to be Accessed")
+                        .padding(.horizontal)
+                }
+                Toggle("Allow MechanicFinder to Access Basic Contact Information", isOn: $ContacttoggleSwitch)
+                
+                if ContacttoggleSwitch {
+                    Text("Yes")
+                        .padding(.horizontal)
+                }
+                
+                Text("Selected State: \(selection)")
+                
+                TextField("Enter ZIP Code Here", text: $ZIPcode)
+                    .foregroundColor(.blue)
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
+                
+                Picker("Select a State", selection: $selection) {
+                    ForEach(States, id: \.self) {_ in
+                        Text("State Selected")
+                    }
+                }
+                .pickerStyle(.menu)
+                
+                
             }
-            
-            Toggle("Allow Mechanics Near You to Know Your Location", isOn: $MechanictoggleSwitch)
-            
-            if MechanictoggleSwitch {
-                Text("location Allowed to be Accessed")
-                    .padding(.horizontal)
-            }
-            Toggle("Allow MechanicFinder to Access Basic Contact Information", isOn: $ContacttoggleSwitch)
-            
-            if ContacttoggleSwitch {
-                Text("Yes")
-                    .padding(.horizontal)
-            }
-            TextField("Enter ZIP Code Here", text: $ZIPcode)
-                .foregroundColor(.blue)
-                .textFieldStyle(.roundedBorder)
-                .padding()
-            
-            
-        
-        Toggle("Enter ZIP Code", isOn: $ZIPcodeToggle)
-        
-            if ZIPcodeToggle {
-                Text("Allowed")
-                    .padding(.horizontal)
+            Group{
+                
             }
         }
     }
 }
-
