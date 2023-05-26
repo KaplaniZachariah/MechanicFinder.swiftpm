@@ -52,8 +52,8 @@ struct SettingsView: View {
                     .padding()
                 
                 Picker("Select a State", selection: $selection) {
-                    ForEach(States, id: \.self) {_ in
-                        Text("State Selected")
+                    ForEach(States, id: \.self) {
+                        Text($0)
                     }
                 }
                 .pickerStyle(.menu)
