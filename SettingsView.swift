@@ -44,13 +44,11 @@ struct SettingsView: View {
                         .padding(.horizontal)
                 }
                 
-                Text("Selected State: \(selection)")
+              
                 
-                TextField("Enter ZIP Code Here", text: $ZIPcode)
-                    .foregroundColor(.blue)
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
-                
+               
+                   
+                   
                 Picker("Select a State", selection: $selection) {
                     ForEach(States, id: \.self) {
                         Text($0)
@@ -58,10 +56,13 @@ struct SettingsView: View {
                 }
                 .pickerStyle(.menu)
                 
-                
+                Text("Selected State: \(selection)")
             }
             Group{
-                
+                TextField("Enter ZIP Code Here", text: $ZIPcode)
+                    .foregroundColor(.blue)
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
             }
         }
     }
