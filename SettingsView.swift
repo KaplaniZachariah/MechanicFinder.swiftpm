@@ -16,7 +16,7 @@ struct SettingsView: View {
     @State var ZIPcodeToggle = false
     @State var ZIPcode = ""
     @State private var selection = "States"
-    let States = ["Arizona", "Washington", "Oregon", "California", "New Mexico", "Texas", "Luisiana", "Mississippi", "Alabama", "Georgia", "Florida", "South Carolina", "North Carolina", "Vriginia", "Washington DC", "Pennsylvania", "New York", "New Jersey", "Delaware", "Maryland", "West Virginia", "Rhode Island", "Connecticut", "Massachusetts", "Vermont", "New Hampshire", "Maine", "Ohio", "Indiana", "Michigan", "illinois", "Wisconsin", "Minnesota", "Iowa", "Missouri", "Arkansas", "Tennessee", "Kentucky", "Oklahoma", "Kansas", "Nebraska", "South Dekota", "North Dekota", "Montana", "Wyoming", "Colorado", "Utah", "Idaho", "Nevada" ]
+    let States = ["Arizona", "Washington", "Oregon", "California", "New Mexico", "Texas", "Luisiana", "Mississippi", "Alabama", "Georgia", "Florida", "South Carolina", "North Carolina", "Vriginia", "Washington DC", "Pennsylvania", "New York", "New Jersey", "Delaware", "Maryland", "West Virginia", "Rhode Island", "Connecticut", "Massachusetts", "Vermont", "New Hampshire", "Maine", "Ohio", "Indiana", "Michigan", "illinois", "Wisconsin", "Minnesota", "Iowa", "Missouri", "Arkansas", "Tennessee", "Kentucky", "Oklahoma", "Kansas", "Nebraska", "South Dekota", "North Dekota", "Montana", "Wyoming", "Colorado", "Utah", "Idaho", "Nevada", "Alaska", "Hawaii"]
     
     var body: some View {
         Text("Settings")
