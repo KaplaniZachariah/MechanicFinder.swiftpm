@@ -72,6 +72,7 @@ struct SettingsView: View {
                             Text($0)
                         }
                     }
+                    .pickerStyle(.menu)
                 }
             }
         }
