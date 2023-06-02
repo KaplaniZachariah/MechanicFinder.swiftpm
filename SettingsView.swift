@@ -18,7 +18,7 @@ struct SettingsView: View {
     @State private var selection = "States"
     let States = ["Arizona", "Washington", "Oregon", "California", "New Mexico", "Texas", "Luisiana", "Mississippi", "Alabama", "Georgia", "Florida", "South Carolina", "North Carolina", "Vriginia", "Washington DC", "Pennsylvania", "New York", "New Jersey", "Delaware", "Maryland", "West Virginia", "Rhode Island", "Connecticut", "Massachusetts", "Vermont", "New Hampshire", "Maine", "Ohio", "Indiana", "Michigan", "illinois", "Wisconsin", "Minnesota", "Iowa", "Missouri", "Arkansas", "Tennessee", "Kentucky", "Oklahoma", "Kansas", "Nebraska", "South Dekota", "North Dekota", "Montana", "Wyoming", "Colorado", "Utah", "Idaho", "Nevada", "Alaska", "Hawaii"]
     @AppStorage("Pick Country of Origin") var CountryPicker = "Countries"
-    let Countries = ["United States", "Canada", "Mexico", "Panama", "Brazil", "Ecuador", "France", "United Kingdom", "Ireland", "Portugal", "Belgium", "Germany", "Italy", "Norway", "Sweden", "Ukraine", "Belarus", "Serbia", "China", "Nepal", "India", "Thailand", "Indonesia", "Iraq", "Iran", "Saudi Arabia", "Yemen", "Oman", "Egypt", "Libya", "Nigheria", "Pakistan", "Isreal", "Palestine", "Taiwan", "Russia"]
+    let Countries = ["United States", "Canada", "Mexico", "Panama", "Brazil", "Ecuador", "France", "United Kingdom", "Ireland", "Portugal", "Belgium", "Germany", "Italy", "Norway", "Sweden", "Ukraine", "Belarus", "Serbia", "China", "Nepal", "India", "Thailand", "Indonesia", "Iraq", "Iran", "Saudi Arabia", "Yemen", "Oman", "Egypt", "Libya", "Nigheria", "Pakistan", "Isreal", "Palestine", "Taiwan", "Russia", "Mongolia", "Czech Republic", "Romania"]
 
     
     var body: some View {
