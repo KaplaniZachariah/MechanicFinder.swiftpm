@@ -2,7 +2,7 @@
 //  SettingsView.swift
 //  MechanicFinder
 //
-//  Created by Michael Grabowy on 5/2/23.
+//  Created by Zachariah Kaplani on 5/2/23.
 //
 
 
@@ -18,7 +18,7 @@ struct SettingsView: View {
     @State private var selection = "States"
     let States = ["Arizona", "Washington", "Oregon", "California", "New Mexico", "Texas", "Luisiana", "Mississippi", "Alabama", "Georgia", "Florida", "South Carolina", "North Carolina", "Vriginia", "Washington DC", "Pennsylvania", "New York", "New Jersey", "Delaware", "Maryland", "West Virginia", "Rhode Island", "Connecticut", "Massachusetts", "Vermont", "New Hampshire", "Maine", "Ohio", "Indiana", "Michigan", "illinois", "Wisconsin", "Minnesota", "Iowa", "Missouri", "Arkansas", "Tennessee", "Kentucky", "Oklahoma", "Kansas", "Nebraska", "South Dekota", "North Dekota", "Montana", "Wyoming", "Colorado", "Utah", "Idaho", "Nevada", "Alaska", "Hawaii"]
     @AppStorage("Pick Country of Origin") var CountryPicker = "Countries"
-    let Countries = ["United States", "Canada", "Mexico", "Panama", "Brazil", "Ecuador"]
+    let Countries = ["United States", "Canada", "Mexico", "Panama", "Brazil", "Ecuador", "France", "United Kingdom", "Ireland", "Portugal", "Belgium", "Germany", "Italy"]
 
     
     var body: some View {
